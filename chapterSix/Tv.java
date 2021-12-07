@@ -2,15 +2,18 @@ package chapterSix;
 
 public class Tv {
 
-
+    private String name;
     public boolean isOn;
     public int channel;
-    public int Volume;
-    public int brightness = 30;
+    public int volume;
+    public int brightness = 0;
 
 
     public Tv(String TvName, int channel, int volume) {
-
+        name = TvName;
+        this.channel = channel;
+        this.volume = volume;
+        brightness = 5;
     }
 
     public boolean isOn() {
@@ -56,28 +59,27 @@ public class Tv {
     }
 
     public int increaseVolumeTo30(int userInput) {
-        if (Volume <= 30) {
+        if (volume <= 30) {
 
-            Volume = Volume + userInput;
-            return Volume;
+            volume = volume + userInput;
+            return volume;
         }
         return 30;
     }
 
     public int getBrightness() {
         //    if (brightness < 100 && brightness >0) {
-        return brightness =30;
+        return brightness;
 
     }
 
 
-    public int increaseBrightnessTo40(int userInput) {
-        if (brightness <= 40) {
-            brightness = userInput;
-            return brightness;
+    public int increaseBrightnessTo30(int userInput) {
+        if (userInput > 30 || userInput < 0){
+            System.out.println("Sorry don't do that again");
         }
-
-        return 40;
+        brightness = userInput;
+        return brightness;
     }
 
     public int setDecreaseBrightness(int userInput) {
@@ -86,6 +88,18 @@ public class Tv {
 
         }
         return 30;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getChannel() {
+        return channel;
+    }
+
+    public int getVolume() {
+        return volume;
     }
 }
 

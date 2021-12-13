@@ -62,8 +62,20 @@ public class TvMain {
         }if(number ==2){
             System.out.println();
             selectVolume();
+        }else if (number==3){
+            System.out.println();
+            setBrightness(1);
         }
 
+    }
+
+    private static int setBrightness(int userinput) {
+        for (int brightness=1;brightness<=15;brightness++){
+            System.out.println(brightness);
+            if(userinput > -1 && userinput<=15);
+            return userinput;
+        }
+        return 15;
     }
 
     private static int selectVolume() {
@@ -97,7 +109,7 @@ public class TvMain {
             return volume;
         }
 
-        return volume;
+        return 20;
     }
 
     private static int clickChannel() {

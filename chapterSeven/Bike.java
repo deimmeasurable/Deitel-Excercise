@@ -2,107 +2,93 @@
 package chapterSeven;
 public class Bike {
 
-
-    public int gear;
-    private  String name;
+    private String name;
+    private boolean isOn;
     private boolean isOff;
-    private int accelerate;
-    private int deacceletrate;
-    public  boolean isOn;
-    public boolean turnOff;
-    private int gearOne;
-    private int gearTwo;
-    private int gearThree;
-    private int gearFour;
+    private int speed;
+    private int gear;
 
-
-    public Bike(String bikeName,int accelerate,int deacceletrate){
-        name = bikeName;
-        gear=1;
+    public Bike(String name) {
+        this.name = name;
+        this.isOn = isOn;
+        speed = 0;
+        gear = 0;
     }
-
-    public  String getbikeName(String bikeName) {
-        return name;
-    }
-
-
-    public boolean isOn() {
-        return isOn;
-    }
-
-    public boolean turnOn() {
-        return isOn=true;
-    }
-
-    public boolean isOff() {
-        return true;
-    }
-
-    public boolean turnOff() {
-        return isOff=true;
-
-    }
-
-    public int canAccelerate() {
-        return accelerate;
-    }
-
-    public int IncreaseAcceleration() {
-        int gear;
-        return gear = 0;
-
-    }
-
-    public int gearRange(int speed) {
-        if (isOn) {
-            if (speed > -1 && speed <= 20) {
-                return gearOne += 1;
-            }
-            if (speed > 20 && speed <= 30) {
-                return gearTwo += 2;
-            }
-            if (speed > 30 && speed < 40) {
-                return gearThree += 3;
-            }
-            if (speed > 40) {
-                return gearFour += 4;
-            }
-
-        }
-        return 0;
-
-    }
-
-
-    public int HaveAGear ( int speed){
-        gearOne += 20;
-        if (speed <= gearOne) {
-            return speed;
-
-        }
-        return 0;
-    }
-
 
 
     public String getName() {
         return name;
     }
 
-    public int getAccelerate() {
-        return 0;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getDeacceletrate() {
-        return 0;
+    public boolean isOn() {
+        return isOn;
+    }
+
+    public void setOn(boolean on) {
+        isOn = on;
+    }
+
+    public boolean isOff() {
+        return isOff;
+    }
+
+    public void setOff(boolean off) {
+        isOff = off;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int speedValue) {
+        this.speed = speedValue;
+    }
+
+    public String changeName() {
+        return name;
     }
 
     public int getGear() {
-        return 0;
+        if(isOn) {
+            if (speed >= 0 && speed <= 20) {
+                gear = 1;
+            }
+            if (speed > 20 && speed <= 30) {
+                gear = 2;
+            }
+        }
+        return gear;
     }
 
-    public int Deaccelerate() {
-        return gear--;
+    public int accelerate() {
+        if(isOn){
+            if(speed >=0 && speed <=20){
+                speed +=1;
+            }
+            if(speed >20 && speed <=30) {
+                speed +=2;
+            }
+            if(speed >30 && speed <=40) {
+                speed += 3;
+            }
+            if(speed > 40){
+                speed +=4;
+            }
+        }
+        return speed;
+    }
+
+
+    public void setGear() {
+        if (isOn){
+            gear=1;
+
+        }
+
+
     }
 }
-

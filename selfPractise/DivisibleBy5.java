@@ -11,7 +11,7 @@ public class DivisibleBy5 {
 
 
        for (int index = 1; index < number ; index++) {
-           if(isDivisibleBy5(index));
+           isDivisibleBy5(index);
            System.out.println(index);
 
        }
@@ -20,7 +20,7 @@ public class DivisibleBy5 {
 
     private boolean isDivisibleBy5(int number) {
         int count;
-        int remainder=0;
+        int remainder;
         for (count = 0; count <number ; count++) {
             remainder=number % 5;
             if(remainder == 0){

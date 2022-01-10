@@ -15,7 +15,7 @@ public class ParkingCharge {
         int total=0;
         double extraCharge=0.50;
         double maximum=10.00;
-        int hour =0;
+        int hour;
         while (true){
             System.out.println("Enter an hour");
             hour= input.nextInt();

@@ -27,7 +27,7 @@ public class Multiples {
                 System.out.println(secondUserInputIsAMultiplyOfFirstInput());
             }
           else {
-                System.out.println("it's not a multiple");;
+                System.out.println("it's not a multiple");
             }
         counter++;
         }

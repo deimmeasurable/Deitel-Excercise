@@ -33,14 +33,11 @@ public class GuessGame {
 
         System.out.println("Congrats");
         number=promptUser("enter number 1 to start or 2 to quit");
-        switch (number){
-            case 1:
-                //System.out.println("enter a number 1 to start again or 2 to quit");
-                guessANumber(number,randomNum);
-                break;
-            case 2:
-                System.exit(0);
-                break;
+        switch (number) {
+            case 1 ->
+                    //System.out.println("enter a number 1 to start again or 2 to quit");
+                    guessANumber(number, randomNum);
+            case 2 -> System.exit(0);
         }
     }
 }

@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class sportRecommender {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int weather = 0;
+        int weather;
 
         System.out.println("Enter a number of weather");
         weather = input.nextInt();

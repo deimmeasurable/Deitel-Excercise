@@ -1,6 +1,7 @@
 package selfPractise;
 
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 public class GlobalWarningQuiz {
@@ -19,9 +20,10 @@ public class GlobalWarningQuiz {
 
     public void renderQuiz() {
 
-        for (int i = 0; i < quiz.length; i++) {
+        for (int i = 0; i < quiz.length-5; i++) {
             System.out.println(quiz[i]);
-            String response = collectResponse();
+            int random=  (int) (Math.random()*6) + 1;
+            String response = collectResponse("Enter your option: ");
             userInput[i] = response;
         }
         accessUserResponse();
@@ -29,7 +31,7 @@ public class GlobalWarningQuiz {
         System.out.println(Arrays.toString(userInput));
     }
 
-    private String collectResponse() {
+    private String collectResponse(String message) {
         String response;
         Scanner input = new Scanner(System.in);
         return response = input.nextLine();
@@ -49,7 +51,7 @@ public class GlobalWarningQuiz {
         return rightAnswer;
     }
     public void userPerformance(){
-        if(rightAnswer==5){
+        if(rightAnswer==5 || rightAnswer > 5){
             System.out.println("excellent");
         }
         if(rightAnswer==4){

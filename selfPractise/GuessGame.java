@@ -22,22 +22,27 @@ public class GuessGame {
 
 
     private static void guessANumber(int number, int randomNum) {
-        while (number != randomNum){
+        while (number != randomNum) {
             if (number > randomNum) {
                 System.out.println("Too high");
-            }else {
+            } else {
                 System.out.println("too low");
             }
             number = promptUser("Enter num");
         }
 
         System.out.println("Congrats");
-        number=promptUser("enter number 1 to start or 2 to quit");
+        number = promptUser("enter number 1 to start or 2 to quit");
         switch (number) {
-            case 1 ->
-                    //System.out.println("enter a number 1 to start again or 2 to quit");
-                    guessANumber(number, randomNum);
-            case 2 -> System.exit(0);
+            case 1 -> {
+                //System.out.println("enter a number 1 to start again or 2 to quit");
+                guessANumber(number, randomNum);
+                break;
+            }
+            case 2 -> {
+                System.exit(0);
+                break;
+            }
         }
     }
 }

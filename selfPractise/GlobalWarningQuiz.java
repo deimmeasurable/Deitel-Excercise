@@ -32,7 +32,6 @@ public class GlobalWarningQuiz {
     }
 
     private String collectResponse(String message) {
-        
         Scanner input = new Scanner(System.in);
         return input.nextLine();
 

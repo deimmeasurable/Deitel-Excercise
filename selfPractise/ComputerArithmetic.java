@@ -8,7 +8,7 @@ public class ComputerArithmetic {
     private static final SecureRandom input = new SecureRandom();
     private static final Scanner scan = new Scanner(System.in);
     public static void selectionOfDifferentArithmetic() {
-        System.out.println("Choose a Option: 1 for addition, 2 for multiplication, 3 for division, and 4 for substration, 5 for all arithmetic");
+        System.out.println("Choose a Option: 1 for addition,\n 2 for multiplication,\n 3 for division,\n 4 for substration,and\n 5 for all arithmetic");
         int options = scan.nextInt();
         switch (options) {
             case 1 -> {
@@ -140,7 +140,7 @@ public class ComputerArithmetic {
                case 3 -> divisionArithmetic();
                case 4 -> substrationArithmetic();
            }
-           //display=(int) (Math.random() * 4 + 1);
+
        }
    }
 

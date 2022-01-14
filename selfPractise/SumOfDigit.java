@@ -28,13 +28,13 @@ public class SumOfDigit {
         thirdDigit=(number % 100)/10;
         System.out.println("The value of the thirdDigit is "+thirdDigit);
 
-        fourDigit=(number % 10)/1;
+        fourDigit= (number % 10);
         System.out.println("The value of the fourDigit is  "+fourDigit);
 
-        totalDigit=firstDigit+secondDigit+thirdDigit+fourDigit;
+        totalDigit= firstDigit + secondDigit + thirdDigit + fourDigit;
 
 
-        System.out.println("The total digit is  "+totalDigit);
+        System.out.println("The total digit is  " + totalDigit);
 
 
 

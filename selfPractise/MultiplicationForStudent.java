@@ -54,7 +54,7 @@ public class MultiplicationForStudent {
                                 System.out.println(correctAnswerPercentage);
                                 System.exit(0);
                             }
-                        } else if (true) {
+                        } else if(true){
                             System.out.println("oops!, try again");
                             System.out.println("attempt the question again");
                             number = input.nextInt();
@@ -62,7 +62,7 @@ public class MultiplicationForStudent {
                             correctAnswer++;
 
                             if (number==-1) System.exit(0);
-                        }else if (number==-1) System.exit(0);
+                        }
 
 //
                     }

@@ -1,17 +1,20 @@
 package chapterEight;
 
 public class Husband {
-    private Wife wife;
+    private Wife iyawo;
 
     public Husband(Wife wife) {
-        this.wife = wife;
+        this.iyawo = wife;
     }
 
     public Wife getWife() {
-        return wife;
+        return iyawo;
     }
 
     public void setWife(Wife wife) {
-        this.wife = wife;
+        this.iyawo = wife;
+    }
+    public void askForWifeToCook(){
+
     }
 }

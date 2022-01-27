@@ -10,7 +10,7 @@ public class UsingTheEnhancedForStatement {
     public static void calculateAbsoluteValueOfNumber(){
         Scanner scanner = new Scanner(System.in);
         int maximum=Integer.MIN_VALUE;
-        int number;
+        int number=5;
 
         for ( int i = 0; i < 5; i++) {
             System.out.println("Enter five numbers");

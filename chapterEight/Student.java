@@ -10,7 +10,8 @@ public class Student {
     }
 
 
-    public void setCourse(Course course) {
+    public Course setCourse(Course course) {
+        return course;
 
     }
 }

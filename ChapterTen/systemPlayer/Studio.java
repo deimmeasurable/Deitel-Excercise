@@ -1,7 +1,9 @@
-package ChapterTen;
+package ChapterTen.systemPlayer;
+
+import ChapterTen.systemPlayer.Player;
 
 public abstract class Studio  {
-    private static Player player;
+    private Player player;
 
     public Studio(Player player) {
         this.player = player;

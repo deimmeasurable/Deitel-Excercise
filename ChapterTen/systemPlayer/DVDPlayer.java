@@ -1,6 +1,9 @@
-package ChapterTen;
+package ChapterTen.systemPlayer;
 
-public class TapePlayer implements Recorder{
+public  class DVDPlayer implements Player {
+
+
+
     @Override
     public void play() {
 
@@ -18,11 +21,6 @@ public class TapePlayer implements Recorder{
 
     @Override
     public void reverse() {
-
-    }
-
-    @Override
-    public void record() {
 
     }
 }

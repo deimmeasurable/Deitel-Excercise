@@ -1,6 +1,6 @@
-package ChapterTen;
+package ChapterTen.systemPlayer;
 
- class CdPlayer implements Player{
+class CdPlayer implements Player {
 
      @Override
      public void play() {

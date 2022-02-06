@@ -1,4 +1,4 @@
-package ChapterTen;
+package ChapterTen.systemPlayer;
 
 public interface Player  {
 

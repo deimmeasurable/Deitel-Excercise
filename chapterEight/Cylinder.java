@@ -63,12 +63,9 @@ public class Cylinder {
    }
 
     public double getVolume() {
-        return volume;
+        return (int)volume;
     }
 
-    public void setVolume(double volume) {
-        this.volume = volume;
-    }
 
     public int heightCanHaveDefaultValueOfOne() {
         if(getHeight()==0){ isNotMoreThanOne();
@@ -91,7 +88,7 @@ public class Cylinder {
     }
 
     public int calculateTheVolumeOfCylinder() {
-        volume=Math.PI * 1 * 2 * 1;
+        volume=Math.PI * radius * 2 * height;
         return (int)volume;
     }
 }

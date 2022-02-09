@@ -1,12 +1,12 @@
 package ChapterTen;
 
 public abstract class Line {
-    private  String striagthLine;
+    private  String straigthLine;
     private String curveLine;
     private String verticalLine;
 
     public Line(String striagthLine, String curveLine, String verticalLine) {
-        this.striagthLine = striagthLine;
+        this.straigthLine = striagthLine;
         this.curveLine = curveLine;
         this.verticalLine = verticalLine;
     }

@@ -42,28 +42,29 @@ public class MyersBriggs {
 
             displayResponseType(message);
             String response = scanner.nextLine();
-            if(!Objects.equals(response, "a") && !Objects.equals(response, "b")){
+            boolean isNotEqualToAOrB=!Objects.equals(response, "a") && !Objects.equals(response, "b");
+            if(isNotEqualToAOrB){
                 System.out.println("The is not the right input");
                response = scanner.nextLine();
             }
-            if (userResponse[i] == null) {
+            boolean isUserResponseEqualToNull=userResponse[i] == null;
+            if (isUserResponseEqualToNull) {
                 userResponse[i] = response;
             }
-//            System.out.println(Arrays.toString(userResponse));
 
-            if (userResponse[i].equalsIgnoreCase("a")) {
+            boolean isUserInputEqualToA=userResponse[i].equalsIgnoreCase("a");
+            if (isUserInputEqualToA) {
                 counterForExtrovert++;
                 System.out.println("the value of counter for E "+counterForExtrovert);
+
             } else if (userResponse[i].equalsIgnoreCase("b")) {
                 counterForIntrovert++;
                 System.out.println("the value of counter for I"+counterForIntrovert);
-
-
             }
 
 
-        }
-        if (counterForExtrovert > counterForIntrovert) {
+        }boolean isExtrovertGreaterThanIntrovert = counterForExtrovert > counterForIntrovert;
+        if (isExtrovertGreaterThanIntrovert) {
             System.out.println("You are an Extrovert");
         } else if (counterForIntrovert > counterForExtrovert) {
             System.out.println("You are an Introvert");
@@ -129,10 +130,10 @@ public class MyersBriggs {
 
             if (userResponse[i].equalsIgnoreCase("a")) {
                 counterForThinking++;
-//                System.out.println("the value of counter for T ");
+               System.out.println("the value of counter for T "+counterForThinking);
             } else if (userResponse[i].equalsIgnoreCase("b")) {
                 counterForFeeling++;
-//                System.out.println("the value of counter for F");
+                System.out.println("the value of counter for F"+counterForFeeling);
 
 
             }
@@ -167,17 +168,17 @@ public class MyersBriggs {
 
             if (userResponse[i].equalsIgnoreCase("a")) {
                 counterForJudging++;
-                System.out.println("the value of counter for J ");
+                System.out.println("the value of counter for J "+counterForJudging);
             } else if (userResponse[i].equalsIgnoreCase("b")) {
                 counterForPerceptive++;
-                System.out.println("the value of counter for P ");
+                System.out.println("the value of counter for P "+counterForPerceptive);
 
 
             }
 
 
-        }
-        if (counterForJudging > counterForPerceptive) {
+        }boolean isJudgingGreaterThanPerceptive=counterForJudging > counterForPerceptive;
+        if (isJudgingGreaterThanPerceptive) {
             System.out.println("Judging");
         } else if (counterForPerceptive > counterForJudging) {
             System.out.println("Perceptive");
@@ -189,6 +190,7 @@ public class MyersBriggs {
 
 
     public String displayResponseType(String message) {
+        message=message;
         System.out.println("enter a or b");
         return message;
     }

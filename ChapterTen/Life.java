@@ -2,8 +2,8 @@ package ChapterTen;
 
 public class Life extends Line {
 
-    public Life(String striagthLine, String curveLine, String verticalLine) {
-        super(striagthLine, curveLine, verticalLine);
+    public Life(String straigthLine, String curveLine, String verticalLine) {
+ super(straigthLine, curveLine, verticalLine);
     }
 
     @Override

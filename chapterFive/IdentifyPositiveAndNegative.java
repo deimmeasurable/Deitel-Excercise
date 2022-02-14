@@ -53,11 +53,6 @@ public class IdentifyPositiveAndNegative {
     }
 
 
-
-
-
-
-
     public static void main(String[] args) {
         IdentifyPositiveAndNegative positive =new IdentifyPositiveAndNegative();
         positive.checkIfNumberIsNegativeOrPositiveOrZero();

@@ -30,47 +30,47 @@ public class SevenSegmentDisplay_2 {
         }
     }
     public static void sideDDisplay() {
-        for (int i = 0; i < segment.length; i++) {
-            for (int j = 0; j < segment[i].length; j++) {
+//        for (int i = 0; i < segment.length; i++) {
+//            for (int j = 0; j < segment[i].length; j++) {
                 segment[4][0] = 1;
                 segment[4][1] = 1;
                 segment[4][2] = 1;
                 segment[4][3] = 1;
             }
-        }
-    }
+//        }
+//    }
     public static void sideEDisplay(){
-        for (int i = 0; i <segment.length ; i++) {
-            for (int j = 0; j < segment[i].length; j++) {
+//        for (int i = 0; i <segment.length ; i++) {
+//                for (int j = 0; j < segment[i].length; j++) {
 
                 segment[2][0] = 1;
                 segment[3][0] = 1;
                 segment[4][0] = 1;
-            }
-        }
+//            }
+//        }
     }
     public static void sideFDisplay(){
-        for (int i = 0; i < segment.length; i++) {
-            for (int j = 0; j <segment[i].length ; j++) {
+//        for (int i = 0; i < segment.length; i++) {
+//            for (int j = 0; j <segment[i].length ; j++) {
 
                 segment[0][0]=1;
                 segment [1][0]=1;
                 segment [0][0]=1;
             }
 
-        }
-    }
+//        }
+//    }
     public static void sideGDisplay(){
-        for (int i = 0; i <segment.length ; i++) {
-            for (int j = 0; j <segment[i].length ; j++) {
+//        for (int i = 0; i <segment.length ; i++) {
+//            for (int j = 0; j <segment[i].length ; j++) {
                 segment [2][0]=1;
                 segment[2][1]=1;
                 segment[2][2]=1;
                 segment[2][3]=1;
             }
 
-        }
-    }
+//        }
+//    }
 
 
 
@@ -86,14 +86,14 @@ public static void display(){
     }
 }
 public static void sideBDisplay(){
-    for (int i = 0; i < segment.length ; i++) {
-        for (int j = 0; j < segment[i].length; j++) {
+//    for (int i = 0; i < segment.length ; i++) {
+//        for (int j = 0; j < segment[i].length; j++) {
             segment[0][3] =1;
             segment[1][3]=1;
             segment[2][3]=1;
-        }
-
-    }
+//        }
+//
+//    }
 }
 public static void promptUser(){
         Scanner scanner=new Scanner(System.in);
@@ -101,9 +101,9 @@ public static void promptUser(){
         String number = scanner.nextLine();
 
         if (number.charAt(segment.length) > 1)
-        {
-            throw new IllegalArgumentException("number is not valid");
-        }
+//        {
+//            throw new IllegalArgumentException("number is not valid");
+//        }
 
     checkNumber(number);
 

@@ -3,14 +3,16 @@ package chapterEight;
 public class Beverage {
     private int cocoaQuantity;
 
+    private int sugarQuantity;
+    private int milkQuantity;
+
     public Beverage(int cocoaQuantity, int sugarQuantity, int milkQuantity) {
         this.cocoaQuantity = cocoaQuantity;
         this.sugarQuantity = sugarQuantity * 2;
         this.milkQuantity = milkQuantity;
     }
 
-    private int sugarQuantity;
-    private int milkQuantity;
+
 
 
     public Beverage() {

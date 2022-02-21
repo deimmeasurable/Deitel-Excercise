@@ -10,9 +10,9 @@ public class Position {
     }
 
     @Override
-    public boolean equals(Object toBeComapared) {
-        if(!toBeComapared.getClass().equals(this.getClass()))return false;
-        Position compared = (Position) toBeComapared;
+    public boolean equals(Object toBeCompared) {
+        if(!toBeCompared.getClass().equals(this.getClass()))return false;
+        Position compared = (Position) toBeCompared;
         if(this.row ==compared.row && this.column ==compared.column){
             return true;
         }

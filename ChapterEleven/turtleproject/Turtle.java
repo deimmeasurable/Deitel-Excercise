@@ -69,7 +69,7 @@ public class Turtle {
         currentPosition.setColumn((currentPosition.getColumn() + increase));
     }
 
-    public Position getCurrentPostion() {
+    public Position getCurrentPosition() {
         return currentPosition;
     }
 

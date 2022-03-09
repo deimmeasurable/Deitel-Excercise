@@ -10,9 +10,7 @@ public class TicTacToe {
 
     private void resetGame() {
         for (int row = 0; row < game.length; row++) {
-            for (int col = 0; col < game[row].length; col++) {
-                game[row][col] = EMPTY;
-            }
+            Arrays.fill(game[row], EMPTY);
         }
     }
 
@@ -36,60 +34,62 @@ public class TicTacToe {
         Scanner scanner = new Scanner(System.in);
         int[] collectionFirstPlayerInput = new int[5];
         int[] collectionSecondPlayerInput = new int[5];
-        int firstPlayerIndex;
-        int secondPlayerIndex;
-        System.out.println((Arrays.deepToString(game)));
+        int firstPlayerIndex = 0;
+        int secondPlayerIndex = 0;
+        displayIndex(" ");
+        for (int i = 0; i <= 4; i++) {
+            System.out.println("PlayerOne, enter the index of your choice to play");
 
-            for (int i = 0; i <= 4; i++) {
-                System.out.println();
-
-                displayIndex(" ");
-                System.out.println("PlayerOne, enter the index of your choice to play");
                 firstPlayerIndex = scanner.nextInt();
-                checkIfCellIsNotEmpty(firstPlayerIndex);
+
+            if(firstPlayerIndex < 0  || firstPlayerIndex >9) {
+                System.out.println("error input");
+                System.exit(0);
+            }
+
+            fillIndexWithValueXAndOInTicTacToeBoardForPlayerOne(firstPlayerIndex);
+            System.out.println(printArray());
+
+            collectionFirstPlayerInput[i] = firstPlayerIndex;
+            System.out.println(Arrays.toString(collectionFirstPlayerInput));
+
+            if (checkWinner(game)) {
+                System.out.println("Hurray you won, playerOne won");
+                return;
+            }
 
 
-                fillIndexWithValueXAndOInTicTacToeBoardForPlayerOne(firstPlayerIndex);
-                System.out.println(printArray());
+        displayIndex(" ");
 
-                collectionFirstPlayerInput[i] = firstPlayerIndex;
-                System.out.println(Arrays.toString(collectionFirstPlayerInput));
+        System.out.println("PlayerTwo, enter the index of your choice to play");
 
-                if (checkWin(game)) {
-                    System.out.println("Hurray you won");
-                    return;
-                }
+            secondPlayerIndex = scanner.nextInt();
+        if(secondPlayerIndex < 0)
 
+            System.out.println("error input!!! enter a valid input ");
 
-                displayIndex(" ");
-
-                System.out.println("PlayerTwo, enter the index of your choice to play");
-                secondPlayerIndex = scanner.nextInt();
-                checkIfCellIsNotEmpty(secondPlayerIndex);
-
-
-                {
-
-
+        {
+                    fillingOForSecondPlayer(secondPlayerIndex);
                     System.out.println(printArray());
                     collectionSecondPlayerInput[i] = secondPlayerIndex;
-                    fillingOForSecondPlayer(secondPlayerIndex);
                     System.out.println(Arrays.toString(collectionSecondPlayerInput));
                 }
-
-                checkWin(game);
-
             }
-        }
+                    checkWinner(game);
+//                checkWin(game);
+                    System.out.println("Hurray you won, playerTwo won");
+                }
 
 
 
-    private String displayIndex(String message) {
+
+
+
+    private void displayIndex(String message) {
         System.out.println("Enter 1 for index 1, Enter 2 for index 2," +
                 "Enter 3 for index 3, Enter 4 for index 4," +
                 "Enter 5 for index 5, Enter 6 for index 6, Enter 7 for index 7," +
                 "Enter 8 for index 8, Enter 9 for index 9");
-        return message;
 
     }
 
@@ -140,7 +140,7 @@ public class TicTacToe {
                 else throw new IllegalArgumentException("position is not empty");
             }
             case 7 -> {
-                if(game[1][2].equals(EMPTY)) {
+                if(game[2][0].equals(EMPTY)) {
                     game[2][0] = fillIndex;
                 }
                 else throw new IllegalArgumentException("position is not empty");
@@ -189,8 +189,47 @@ public class TicTacToe {
         }
         return false;
     }
+    private boolean checkWinner(TicTacToeBoard[][] game) {
+        for (int row = 0; row < game.length; ++row) {
+            for (int column = 0; column < game[row].length; column++) {
+                if (!game[0][0].equals(EMPTY) && !game[0][1].equals(EMPTY) && !game[0][2].equals(EMPTY)){
+                    checker();
+
+                    if(!game[1][0].equals(EMPTY) && !game[1][1].equals(EMPTY) && !game[1][2].equals(EMPTY)) {
+                        checker();
+
+                        if(!game[2][0].equals(EMPTY) && !game[2][1].equals(EMPTY) && !game[2][2].equals(EMPTY)){
+
+                            return true;
+                        }
+                    }
+                }
+            }
+
+        }
+        return false;
+
+    }
+    private boolean checker(){
+        for (int row = 0; row < game.length; row++) {
+            for (int column = 0; column < game[row].length; ++column) {
+                if( game[row][column].equals(X)){
+
+                }
+                    else if(game[row][column].equals(O)){
+                    System.out.println("winner the last player won");
+
+                }
+                return true;
 
 
+            }
+
+            System.exit(0);
+
+        }
+        return false;
+    }
 
     public boolean checkIfCellIsNotEmpty(int index) {
         for (int row = 0; row < game.length; ++row) {
@@ -200,13 +239,13 @@ public class TicTacToe {
                     throw new IllegalArgumentException("position is not empty");
 
                 }
-                    return false;
+
                 }
 
                 }
             }
-return true;
-        }
+        return false;
+    }
 
 
 

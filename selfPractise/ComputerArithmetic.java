@@ -1,12 +1,16 @@
 package selfPractise;
 
 import java.security.SecureRandom;
-import java.util.Random;
 import java.util.Scanner;
 
 public class ComputerArithmetic {
     private static final SecureRandom input = new SecureRandom();
     private static final Scanner scan = new Scanner(System.in);
+    private static int firstNumber = generateFirstNumberRandomly();
+    private static int secondNumber = generateSecondNumberRandomly();
+    private static int secretSummation = secretRandomResults(firstNumber,secondNumber);
+
+
     public static void selectionOfDifferentArithmetic() {
         System.out.println("Choose a Option: 1 for addition,\n 2 for multiplication,\n 3 for division,\n 4 for substration,and\n 5 for all arithmetic");
         int options = scan.nextInt();
@@ -57,6 +61,34 @@ public class ComputerArithmetic {
         }
 
     }
+
+    /*
+    Arithemetic refactoring.
+     */
+    public static String additionArithmetiic(int answerFromUser){
+        String message;
+      if(answerFromUser == secretSummation){
+          message = "Good: you are doing great";
+          System.out.println(message);
+      }
+       message = "Too bad!! you think it too cheap";
+        System.out.println(message);
+        return message;
+    }
+    public static int generateFirstNumberRandomly(){
+       int firstNumber = input.nextInt(2);
+       return firstNumber;
+    }
+    public static int generateSecondNumberRandomly(){
+       int secondNumber = input.nextInt(1);
+       return secondNumber;
+    }
+    public static int secretRandomResults(int firstNumber, int secondNumber){
+        firstNumber = generateFirstNumberRandomly();
+        secondNumber = generateSecondNumberRandomly();
+        return firstNumber + secondNumber;
+    }
+
 
     public static void multiplicationArithmetic() {
         int count = 1;

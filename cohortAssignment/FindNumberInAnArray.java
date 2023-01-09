@@ -1,30 +1,30 @@
 package cohortAssignment;
 
 public class FindNumberInAnArray {
+    public static void main(String[] args) {
 
-      public static int solution(int[] A) {
+
+
             // write your code in Java SE 8
-            int value=0;
-            A=new int[]{1,3,6,4,1,2};
-            for(int i=0; i<A.length;i++){
-                if(A[i]==A.length-1){
-                    value= A[0] + A[3];
-
+            int value = 10;
+            int indexVal = 0;
+  int [] A=new int[]{1,3,6,4,1,2};
+            for (int i = 0; i <= A.length-1; i++) {
+                if (A[i] == value && A[i]-1 ==value) {
+                    indexVal = A[i];
+                    System.out.println(indexVal);
 
                 }
 
-
             }
 
-        System.out.println(value);
-       return value;
+        }
+
         }
 
 
-public static void main(String[] args){
-          solution(new int[]{1, 3, 6, 4, 1, 2});
-}
 
-    }
+
+
 
 

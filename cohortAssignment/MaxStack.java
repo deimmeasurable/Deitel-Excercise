@@ -10,7 +10,7 @@ public class MaxStack<T extends Comparable<T>> {
     private Stack<T> minStack= new Stack<T>();
 
     public void push(T obj){
-        if(maxStack.size()==0 || obj.compareTo(getMax())>stackValue){
+        if(maxStack.size()==0 || obj.compareTo(getMax())>0){
             maxStack.push(obj);
 
         }

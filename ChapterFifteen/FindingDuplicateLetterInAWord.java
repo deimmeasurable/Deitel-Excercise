@@ -4,8 +4,10 @@ import java.util.*;
 
 public class FindingDuplicateLetterInAWord {
     public static void main(String[] args) {
-//        findDuplicateLetterInAWord("look");
-        capitalizedTheFirstLetterAfterWhitespace("the boy is good");
+       findDuplicate("look");
+//        capitalizedTheFirstLetterAfterWhitespace("the boy is good");
+//        capitalizeFirstLetter("tall taller tallest");
+//        checkIfItAPalindrome ("deed");
     }
 
     public static String findDuplicate(String word) {
@@ -17,6 +19,7 @@ public class FindingDuplicateLetterInAWord {
             if (map.containsKey(word.charAt(i))) {
                 int count = map.get(word.charAt(i));
                 map.put(word.charAt(i), ++count);
+
             } else {
                 map.put(word.charAt(i), 1);
                 collect = String.valueOf(map);
@@ -25,6 +28,23 @@ public class FindingDuplicateLetterInAWord {
         }
         System.out.println(collect);
         return collect;
+
+    }
+    public static String  findDuplicateValue(String word){
+        Map<Character,Integer>  collect = new HashMap<>();
+        String  input = "";
+        for (int i = 0; i <word.length(); i++) {
+            if(collect.containsKey(word.charAt(i))) {
+                int count =collect.get(word.charAt(i));
+                collect.put(word.charAt(i), ++count);
+                
+            }else {
+                collect.put(word.charAt(i),1);
+                input= collect.toString();
+            }
+
+        }
+        return  input;
 
     }
 
@@ -136,22 +156,54 @@ public class FindingDuplicateLetterInAWord {
 
     }
 
-    public static void capitalizedTheFirstLetterAfterWhitespace(String word) {
-        word = word.strip();
-        String[] collect = word.trim().split("\\s+");
-        StringBuilder string = new StringBuilder();
-        for (String s : collect) {
-//            if(collect[i].equals(collect[0])){
-            String newString = s.substring(0, 1).toUpperCase();
-            String newWord = newString + word.substring(1);
+//    public static void capitalizedTheFirstLetterAfterWhitespace(String word) {
+//        word = word.strip();
+//        String[] collect = word.trim().split("\\s+");
+//        StringBuilder string = new StringBuilder();
+//        for (String s : collect) {
+////            if(collect[i].equals(collect[0])){
+//            String newString = s.substring(0, 1).toUpperCase();
+//            String newWord = newString + word.substring(1);
+//
+//
+//            string.append(newWord);
+//            string.append(" ");
+//
+//        }
+//        System.out.println(string);
+////        }
+////        return string.toString().trim();
+//    }
+    public static String capitalizeFirstLetter(String word) {
+        word=word.strip();
+        String  []  collect=word.trim().split("\\s+");
+        StringBuilder   value=new StringBuilder();
+        for(String  data : collect){
+            String  item=data.substring(0,1).toUpperCase();
+            String  capitalize=item+word.substring(1);
 
+            value.append(capitalize);
+break;
+        }
+        System.out.println(value);
+        return value.toString().trim();
+    }
+    public static boolean checkIfItAPalindrome(String value){
+        value=value.strip().toLowerCase();
+        String [] word  =value.trim().split("\\s+");
+        for (int i = 0; i < word.length; i++) {
+            if(word[i].charAt(0)==(word[i].charAt(word.length)-1)){
+                System.out.println("it a palindrome");
+                return  true;
 
-            string.append(newWord);
-            string.append(" ");
+            }else  if(word[i].charAt(0)!=(word[i].charAt(word.length) - 1)){
+
+                System.out.println("it not a palindrome");
+            }
+
 
         }
-        System.out.println(string);
-//        }
-//        return string.toString().trim();
+
+        return  false;
     }
 }

@@ -17,7 +17,7 @@ checkIfWordIsAPalindrome();
         StringBuilder collectNotAPalindrome = new StringBuilder();
         StringBuilder value= new StringBuilder();
         String [ ] searchWords =word.split("//+");
-        for (int i =searchWords.length-1; i >=0; i--) {
+        for (int i =searchWords.length-1; i >=0; --i) {
 
             if ((searchWords[i].charAt(0)) == (searchWords[i].charAt(searchWords[i].length() - 1))) {
                 collectPalindrome.append(searchWords[i]);
@@ -28,9 +28,9 @@ checkIfWordIsAPalindrome();
             } else {
                 collectNotAPalindrome.append(searchWords[i]);
                 collectNotAPalindrome.reverse();
+                System.out.println(collectNotAPalindrome +" it not a palindrome");
+                return  false;
             }
-
-
 
         }
 

@@ -2,14 +2,14 @@ package selfPractise;
 
 public class PrimeDigit {
 
-    public  void getPrimeNumberFrom1To10000(int number) {
+    public  int getPrimeNumberFrom1To10000(int number) {
 
         for (int index = 2; index < number; index++) {
             if (isPrime(index)) {
                 System.out.println(index);
             }
 
-        }
+        }return number;
     }
         public static void squareRootTwoFrom1To10000(int totalValue){
 

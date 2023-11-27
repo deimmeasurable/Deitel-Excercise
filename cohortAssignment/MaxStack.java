@@ -10,14 +10,14 @@ public class MaxStack<T extends Comparable<T>> {
     private Stack<T> minStack= new Stack<T>();
 
     public void push(T obj){
-        if(maxStack.size()==0 || obj.compareTo(getMax())>0){
+        if(maxStack.isEmpty() || obj.compareTo(getMax())>0){
             maxStack.push(obj);
 
         }
         stackValue.push(obj);
     }
     public T pop(){
-        if(stackValue.size()==0){
+        if(stackValue.isEmpty()){
             return null;
         }
         T result= this.stackValue.pop();
@@ -27,17 +27,27 @@ public class MaxStack<T extends Comparable<T>> {
         return result;
     }
     public  T getMax(){
-        if(maxStack.size()==0){
+        if(maxStack.isEmpty()){
             return null;
         }
         return maxStack.peek();
     }
     public T getMin(){
-        if(minStack.size()==0){
+        if(minStack.isEmpty()){
             return null;
 
         }
         return minStack.peek();
     }
+
+    //
+
+    public void pushs(T obj){
+        if(maxStack.isEmpty() || obj.compareTo(getMax())>0 ){
+            maxStack.push(obj);
+        }
+        stackValue.push(obj);
+    }
+
 
 }
